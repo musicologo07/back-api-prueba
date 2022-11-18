@@ -1,7 +1,7 @@
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const { UploadData } = require("./src/controllers/uploadData");
-const PORT = process.env.DB_PORT;
+const PORT = process.env.DB_PORT || process.env.DB_PORT_DEP;
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async () => {
